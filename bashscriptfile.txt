@@ -1,0 +1,120 @@
+echo "Enter a number : "
+read num
+rem=`expr $num % 2`
+if [ $rem -eq 0 ]
+then
+echo "$num is even."
+else
+echo "$num is odd."
+fi
+
+
+____________________________________________________________
+
+echo "enter numbers ti be multiplied :"
+read num1
+read num2
+mul=`expr $num1 \* $num2`
+echo "Multiplication is=$mul"
+
+
+________________________________________________
+
+echo "Enter number"
+read num1
+read num2
+sum=`expr $num1 + $num2`
+echo "sum=$sum"
+
+
+_______________________________________________
+
+for((i=1; i<=5; i++))
+do
+echo "$i"
+done
+
+____________________________________________
+
+a= 1
+until [ $a -gt 10 ]
+do
+echo "$a"
+((a= a+1))
+done
+
+_______________________________________________
+
+echo "Enter name"
+read name
+if [ -f $name ]
+then
+echo "$name is a file."
+elif [ -d $name ]
+then echo "$name ia a directory."
+else
+echo "$name doesn't exist."
+fi
+
+
+________________________________________
+
+a=1
+while [ $a -le 10 ]
+do
+echo "$a"
+a=`expr $a + 1`
+done
+
+
+_____________________________________________
+
+while true; do
+echo "1. Add"
+echo "2. sub"
+echo "3. mul"
+echo "4. div"
+echo "5. exit"
+echo "Enter your choice : "
+read choice
+
+case $choice in
+1)
+echo "Enter 2 numbers :"
+read a
+read b
+add=`expr $a + $b`
+echo "Add=$add"
+;;
+2)
+echo "enter 2 nubers"
+read a
+read b
+sub=`expr $a - $b`
+echo "Sub=$sub"
+;;
+3)
+echo "enter 2 numbers"
+read a
+read b
+mul=`expr $a \* $b`
+echo "mul=$mul"
+;;
+4)
+echo "enter 2 numbers"
+read a
+read b
+div=`expr $a / $b`
+echo "div=$div"
+;;
+5)
+echo "Exiting the loop"
+break
+;;
+*)
+echo "Invalid Choice."
+;;
+
+esac
+done
+

@@ -1,0 +1,111 @@
+1] vi arithmetic.sh                       esc:wq
+
+echo "Enter two nos."
+read num1 num2
+sum=`expr $num1 + $num2`
+echo "sum= $sum"
+
+bash arithmetic.sh
+
+
+2]eo.sh
+
+echo "Enter a no."
+read num
+remainder=`expr $num % 2`
+if [ $remainder -eq 0 ]
+then
+    echo "$num is even"
+else
+    echo "$num is odd"
+fi
+
+bash eo.sh
+
+
+3]file/directory
+
+echo "Enter name :"
+read name
+if [ -f $name ]
+then
+  echo "$name is a file"
+elif [ -d $name ]
+then
+echo "$name is a directory"
+else
+echo "$name does not exist"
+fi
+
+
+4]do-while
+
+x=1
+while [ $x -le 10 ]
+do
+  echo "$x"
+  x=`expr $x + 1`
+done
+
+
+5]for
+
+for((x=1; x<=10; x++))
+do
+  echo "$x"
+done
+
+
+6]until
+
+x=1
+until [ $x -gt 10 ]        
+do
+  echo "$x"
+  ((x=x+1))
+done
+
+
+7]Sorting data
+
+1 Shruti 245
+69 Mansi 567
+23 Janhavi 789
+45 Snehal 670
+
+sort ./studentdata.sh                 1st column numerically
+sort -n ./studentdata.sh              1st column numerically
+sort -k 2 ./studentdata.sh            2nd column alphabetically
+sort -k 2 -r ./studentdata.sh         2nd column alphabet reverse
+
+
+8] Factorial
+
+echo "enter number"
+read num
+f=1
+while [ $num -gt 1 ]
+do
+  f=`expr $f \* $num`
+  num=`expr $num - 1`
+done
+echo $f
+
+
+9] Print tables
+
+echo "enter number"
+read num
+for((j=1;j<=10;j++))
+do
+ x=`expr $num \* $j`
+ echo "$x"
+done
+
+
+10] 
+
+
+
+
+
